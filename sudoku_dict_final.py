@@ -25,70 +25,60 @@ c_small_squares = {
     "D": (0, 1, 2, 9, 10, 11, 18, 19, 20, 27, 28, 29, 36, 37, 38, 45, 46, 47, 54, 55, 56, 63, 64, 65, 72, 73, 74),
     "E": (3, 4, 5, 12, 13, 14, 21, 22, 23, 30, 31, 32, 39, 40, 41, 48, 49, 50, 57, 58, 59, 66, 67, 68, 75, 76, 77),
     "F": (6, 7, 8, 15, 16, 17, 24, 25, 26, 33, 34, 35, 42, 43, 44, 51, 52, 53, 60, 61, 62, 69, 70, 71, 78, 79, 80)}
-# "cs7": (54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71,78, 79, 80, 0, 1, 2, 9, 10, 11, 18, 19, 20, 27, 28, 29, 36, 37, 38, 45, 46, 47),
-# "cs8": (54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71,78, 79, 80, 3, 4, 5, 12, 13, 14, 21, 22, 23, 30, 31, 32, 39, 40, 41, 48, 49, 50),
-# "cs9": (54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71,78, 79, 80, 6, 7, 8, 15, 16, 17, 24, 25, 26, 33, 34, 35, 42, 43, 44, 51, 52, 53)}
 
-# c_small_squares = {"css1": (
-# 0, 1, 2, 9, 10, 11, 18, 19, 20, 3, 4, 5, 12, 13, 14, 21, 22, 23, 6, 7, 8, 15, 16, 17, 24, 25, 26, 27, 28, 29, 36, 37,
-# 38, 45, 46, 47, 54, 55, 56, 63, 64, 65, 72, 73, 74),
-#                    "css2": (
-#                    0, 1, 2, 9, 10, 11, 18, 19, 20, 3, 4, 5, 12, 13, 14, 21, 22, 23, 6, 7, 8, 15, 16, 17, 24, 25, 26, 30,
-#                    31, 32, 39, 40, 41, 48, 49, 50, 57, 58, 59, 66, 67, 68, 75, 76, 77),
-#                    "css3": (
-#                    0, 1, 2, 9, 10, 11, 18, 19, 20, 3, 4, 5, 12, 13, 14, 21, 22, 23, 6, 7, 8, 15, 16, 17, 24, 25, 26, 33,
-#                    34, 35, 42, 43, 44, 51, 52, 53, 60, 61, 62, 69, 70, 71, 78, 79, 80),
-#                    "css4": (
-#                    27, 28, 29, 36, 37, 38, 45, 46, 47, 30, 31, 32, 39, 40, 41, 48, 49, 50, 33, 34, 35, 42, 43, 44, 51,
-#                    52, 53, 0, 1, 2, 9, 10, 11, 18, 19, 20, 54, 55, 56, 63, 64, 65, 72, 73, 74),
-#                    "css5": (
-#                    27, 28, 29, 36, 37, 38, 45, 46, 47, 30, 31, 32, 39, 40, 41, 48, 49, 50, 33, 34, 35, 42, 43, 44, 51,
-#                    52, 53, 3, 4, 5, 12, 13, 14, 21, 22, 23, 57, 58, 59, 66, 67, 68, 75, 76, 77),
-#                    "css6": (
-#                    27, 28, 29, 36, 37, 38, 45, 46, 47, 30, 31, 32, 39, 40, 41, 48, 49, 50, 33, 34, 35, 42, 43, 44, 51,
-#                    52, 53, 6, 7, 8, 15, 16, 17, 24, 25, 26, 60, 61, 62, 69, 70, 71, 78, 79, 80),
-#                    "css7": (
-#                    54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71, 78,
-#                    79, 80, 0, 1, 2, 9, 10, 11, 18, 19, 20, 27, 28, 29, 36, 37, 38, 45, 46, 47),
-#                    "css8": (
-#                    54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71, 78,
-#                    79, 80, 3, 4, 5, 12, 13, 14, 21, 22, 23, 30, 31, 32, 39, 40, 41, 48, 49, 50),
-#                    "css9": (
-#                    54, 55, 56, 63, 64, 65, 72, 73, 74, 57, 58, 59, 66, 67, 68, 75, 76, 77, 60, 61, 62, 69, 70, 71, 78,
-#                    79, 80, 6, 7, 8, 15, 16, 17, 24, 25, 26, 33, 34, 35, 42, 43, 44, 51, 52, 53)}
+# 3
+# sudoku_puzzle = [4, 0, 0, 0, 0, 0, 6, 5, 0,
+#                  0, 3, 1, 6, 7, 0, 0, 0, 0,
+#                  0, 0, 0, 0, 9, 0, 8, 0, 7,
+#                  3, 0, 9, 2, 0, 0, 0, 0, 0,
+#                  0, 5, 0, 0, 0, 0, 0, 3, 0,
+#                  0, 0, 0, 0, 0, 1, 4, 0, 5,
+#                  7, 0, 3, 0, 1, 0, 0, 0, 0,
+#                  0, 0, 0, 0, 8, 7, 1, 2, 0,
+#                  0, 1, 2, 0, 0, 0, 0, 0, 8]
 
-##3
-sudoku_puzzle = [4, 0, 0, 0, 0, 0, 6, 5, 0,
-                 0, 3, 1, 6, 7, 0, 0, 0, 0,
-                 0, 0, 0, 0, 9, 0, 8, 0, 7,
-                 3, 0, 9, 2, 0, 0, 0, 0, 0,
-                 0, 5, 8, 0, 0, 0, 0, 3, 0,
-                 0, 0, 0, 8, 0, 1, 4, 0, 5,
-                 7, 0, 3, 0, 1, 0, 0, 0, 0,
-                 0, 0, 0, 0, 8, 7, 1, 2, 0,
-                 0, 1, 2, 0, 0, 0, 0, 0, 8]
-
-##4
-# sudoku_puzzle = [0, 0, 0, 3, 0, 0, 0, 0, 4,
-#                  0, 6, 4, 2, 0, 0, 0, 0, 0,
-#                  3, 0, 8, 5, 0, 0, 2, 6, 0,
-#                  2, 0, 0, 0, 0, 0, 1, 0, 0,
-#                  0, 0, 0, 4, 6, 7, 0, 0, 0,
-#                  0, 0, 7, 0, 0, 0, 0, 0, 5,
-#                  0, 9, 2, 0, 0, 8, 7, 0, 3,
-#                  0, 0, 0, 0, 0, 5, 8, 2, 0,
-#                  5, 0, 0, 0, 0, 9, 0, 0, 0]
+# ##4
+# sudoku_puzzle = [0, 2, 5, 3, 0, 6, 9, 0, 4,
+#                  9, 6, 4, 2, 0, 1, 5, 3, 0,
+#                  3, 0, 8, 5, 9, 4, 2, 6, 0,
+#                  2, 4, 0, 0, 5, 3, 1, 0, 0,
+#                  0, 5, 0, 4, 6, 7, 3, 0, 2,
+#                  0, 3, 7, 0, 0, 2, 0, 0, 5,
+#                  0, 9, 2, 0, 4, 8, 7, 5, 3,
+#                  4, 0, 0, 0, 3, 5, 8, 2, 9,
+#                  5, 8, 3, 0, 2, 9, 0, 0, 0]
 
 ##5
 # sudoku_puzzle = [0, 8, 0, 0, 1, 3, 0, 6, 0,
-#                   0, 0, 5, 0, 9, 2, 7, 8, 0,
-#                   0, 0, 0, 0, 0, 0, 0, 9, 0,
-#                   8, 2, 0, 0, 0, 0, 0, 3, 0,
-#                   0, 0, 0, 3, 0, 6, 0, 0, 0,
-#                   0, 5, 0, 0, 0, 0, 0, 1, 2,
-#                   0, 4, 0, 0, 0, 0, 0, 0, 0,
-#                   0, 6, 8, 4, 7, 0, 1, 0, 0,
-#                   0, 9, 0, 8, 6, 0, 0, 5, 0]
+#                  0, 0, 5, 6, 9, 2, 7, 8, 0,
+#                  0, 0, 0, 0, 0, 0, 0, 9, 0,
+#                  8, 2, 0, 1, 5, 0, 0, 3, 0,
+#                  0, 0, 0, 3, 2, 6, 0, 4, 0,
+#                  0, 5, 3, 9, 0, 0, 0, 1, 2,
+#                  5, 4, 1, 2, 3, 9, 0, 7, 0,
+#                  3, 6, 8, 4, 7, 5, 1, 2, 9,
+#                  0, 9, 0, 8, 6, 1, 0, 5, 0]
+##6
+# sudoku_puzzle = [0, 8, 0, 7, 1, 3, 2, 6, 5,
+#                  1, 3, 5, 6, 9, 2, 7, 8, 4,
+#                  0, 7, 0, 5, 0, 0, 3, 9, 1,
+#                  8, 2, 0, 1, 5, 0, 9, 3, 0,
+#                  0, 1, 0, 3, 2, 6, 5, 4, 0,
+#                  0, 5, 3, 9, 0, 0, 0, 1, 2,
+#                  5, 4, 1, 2, 3, 9, 0, 7, 0,
+#                  3, 6, 8, 4, 7, 5, 1, 2, 9,
+#                  0, 9, 0, 8, 6, 1, 4, 5, 3]
+
+##6o
+sudoku_puzzle = [0, 8, 0, 0, 1, 3, 0, 6, 0,
+                 0, 0, 5, 0, 9, 2, 7, 8, 4,
+                 0, 0, 0, 0, 0, 0, 0, 9, 0,
+                 8, 2, 0, 0, 0, 0, 0, 3, 0,
+                 0, 1, 0, 3, 0, 6, 0, 0, 0,
+                 0, 5, 0, 0, 0, 0, 0, 1, 2,
+                 0, 4, 0, 0, 0, 0, 0, 0, 0,
+                 0, 6, 8, 4, 7, 0, 1, 0, 0,
+                 0, 9, 0, 8, 6, 0, 0, 5, 0]
 
 print(sudoku_puzzle.count(0))
 
@@ -164,8 +154,20 @@ def dict_possible_zero_values(dict_index_value_zero_r_c_ss):
         final_set = (row_set | column_set | ss_set)
         value_set = universal_set - final_set
         dict_possible_value[key] = value_set
+        # for index, val in enumerate(sudoku_puzzle):
+        #     if val != 0:
+        #         for keys, values in dict_possible_value.items():
+        #             if keys == index:
+        #                 del dict_possible_value[keys]
     return dict_possible_value
-
+# dict_possible_value = dict()
+# def del_key_filled_values (dict_possible_value , sudoku_puzzle):
+#     for index, value in enumerate(sudoku_puzzle):
+#         if value != 0:
+#             for keys,values in dict_possible_values.items():
+#                 if keys == index:
+#                     dict_possible_value = dict_possible_values.pop[keys]
+#     return dict_possible_value
 
 def update_missing_value(sudoku_puzzle):
     for index, value in enumerate(sudoku_puzzle):
@@ -178,43 +180,111 @@ def update_missing_value(sudoku_puzzle):
                         sudoku_puzzle.insert(index, value_int)
 
 
-def compare_ss(sudoku_puzzle):
+def update_ss(sudoku_puzzle):
     for index, value in enumerate(sudoku_puzzle):
         if value == 0:
-            list_of_c_ss_keys = []
-            for keys, values in c_small_squares.items():
+            for keys, values in small_square.items():
                 if index in values:
-                    list_of_c_ss_keys.append(keys)
-            common_list_c_ss_index = (
-                    (c_small_squares.get(list_of_c_ss_keys[0])) + (c_small_squares.get(list_of_c_ss_keys[1])))
-            common_list_c_ss_value = []
-            for val in common_list_c_ss_index:
-                if sudoku_puzzle[val] != 0:
-                    common_list_c_ss_value.append(sudoku_puzzle[val])
-                    for key_s, value_s in dict_possible_value.items():
-                        if key_s == index:
-                            possible_value_for_index = dict_possible_value.get(key_s)
-                            for valu in possible_value_for_index:
-                                repetition_count_of_value = common_list_c_ss_value.count(valu)
-                                if repetition_count_of_value == 4:
-                                    sudoku_puzzle.pop(index)
-                                    sudoku_puzzle.insert(index, valu)
+                    my_dict = dict()
+                    for y in values:
+                        for key_s, value_s in dict_possible_value.items():
+                            if key_s == y:
+                                my_dict[y] = value_s
+                    possible_value_for_index = []
+                    for k, v in my_dict.items():
+                        possible_value_for_index.append(list(my_dict.get(k)))
+                    res = []
+                    for nested_list in possible_value_for_index:
+                        for z in nested_list:
+                            res.append(z)
+                    for valu in res:
+                        repetition_count_of_value = res.count(valu)
+                        if repetition_count_of_value == 1:
+                            # print (valu)
+                            for keyy, valuee in my_dict.items():
+                                if valu in valuee:
+                                    # print (keyy)
+                                    sudoku_puzzle.pop(keyy)
+                                    sudoku_puzzle.insert(keyy, valu)
 
 
-paste_sudoku_puzzle_in_matrix(sudoku_puzzle)
+def find_indentical_three_index_in_row_with_value_zero(sudoku_puzzle):
+    # for index in range(0,80):
+    for index, value in enumerate(sudoku_puzzle):
+        values = []
+        if value == 0:
+            index2 = index + 1
+            if sudoku_puzzle[index2] == 0:
+                index3 = index2 + 1
+                if sudoku_puzzle[index3] == 0:
+                    values.append(index)
+                    values.append(index2)
+                    values.append(index3)
+                    print(values)
+                    my_dict = dict()
+                    for y in values:
+                        for key_s, value_s in dict_possible_value.items():
+                            if key_s == y:
+                                my_dict[y] = value_s
+                    possible_value_for_index = []
+                    for k, v in my_dict.items():
+                        possible_value_for_index.append(list(my_dict.get(k)))
+                    res = []
+                    for nested_list in possible_value_for_index:
+                        for z in nested_list:
+                            res.append(z)
+                    for valu in res:
+                        repetition_count_of_value = res.count(valu)
+                        if repetition_count_of_value == 1:
+                            # print (valu)
+                            for keyy, valuee in my_dict.items():
+                                if valu in valuee:
+                                    # print (keyy)
+                                    sudoku_puzzle.pop(keyy)
+                                    sudoku_puzzle.insert(keyy, valu)
+        else:
+            continue
+
+
+
+
+
+# paste_sudoku_puzzle_in_matrix(sudoku_puzzle)
 
 find_index_for_value_0_sudoku_puzzle(sudoku_puzzle)
 
-# for value in list_index_value_0:
-for x in range(10):
+for x in range(11):
     list_associate_r_c_ss_number_as_index = find_r_c_ss_number_as_index_value_0(list_index_value_0)
     dict_index_value_zero_r_c_ss = zip_to_create_dict(list_index_value_0, list_associate_r_c_ss_number_as_index)
     # dict_possible_zero_values(dict_index_value_zero_r_c_ss)
     print(dict_possible_zero_values(dict_index_value_zero_r_c_ss))
-    compare_ss(sudoku_puzzle)
+    # del_key_filled_values(dict_possible_value, sudoku_puzzle)
+    update_ss(sudoku_puzzle)
     update_missing_value(sudoku_puzzle)
 
-print("\n")
+find_indentical_three_index_in_row_with_value_zero(sudoku_puzzle)
 paste_sudoku_puzzle_in_matrix(sudoku_puzzle)
 print(sudoku_puzzle.count(0))
 
+# def compare_ss(sudoku_puzzle):
+#     for index, value in enumerate(sudoku_puzzle):
+#         if value == 0:
+#             list_of_c_ss_keys = []
+#             for keys, values in c_small_squares.items():
+#                 if index in values:
+#                     list_of_c_ss_keys.append(keys)
+#             common_list_c_ss_index = (
+#                     (c_small_squares.get(list_of_c_ss_keys[0])) + (c_small_squares.get(list_of_c_ss_keys[1])))
+#             common_list_c_ss_value = []
+#             for val in common_list_c_ss_index:
+#                 if sudoku_puzzle[val] != 0:
+#                     common_list_c_ss_value.append(sudoku_puzzle[val])
+#                     for key_s, value_s in dict_possible_value.items():
+#                         if key_s == index:
+#                             possible_value_for_index = dict_possible_value.get(key_s)
+#                             for valu in possible_value_for_index:
+#                                 repetition_count_of_value = common_list_c_ss_value.count(valu)
+#                                 if repetition_count_of_value == 4:
+#                                     sudoku_puzzle.pop(index)
+#                                     sudoku_puzzle.insert(index, valu)
+#                                     # del dict_possible_value[key_s]
