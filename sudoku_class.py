@@ -195,10 +195,11 @@ class solve_sudoku:
                             self.sudoku_puzzle.pop(key)
                             value_int = set.pop(val)
                             self.sudoku_puzzle.insert(index, value_int)
-                            # del self.possible_values_can_be_filled_for_zero_values[key]
 
 
-sudoku = [0, 8, 0, 0, 1, 3, 0, 6, 0,
+
+
+sudoku = [4, 8, 9, 0, 1, 3, 0, 6, 0,
           0, 0, 5, 0, 9, 2, 7, 8, 4,
           0, 0, 0, 0, 0, 0, 0, 9, 0,
           8, 2, 0, 0, 0, 0, 0, 3, 0,
@@ -222,7 +223,7 @@ new_puzzle = solve_sudoku(sudoku)
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
 new_puzzle.find_index_for_value_zero_in_sudoku_puzzle()
 
-for value in range(10):
+for value in range (12):
     new_puzzle.find_associate_r_c_ss_number_as_index_of_value_zero()
     new_puzzle.zip_to_create_dict_of_two_list()
     print(new_puzzle.possible_match_numeric_values_for_zero_values())
@@ -231,16 +232,16 @@ for value in range(10):
     new_puzzle.update_missing_value()
 
 
-
 # new_puzzle.find_identical_three_index_in_row_with_value_zero()
-#
-# for value in range(10):
-#     new_puzzle.find_associate_r_c_ss_number_as_index_of_value_zero()
-#     new_puzzle.zip_to_create_dict_of_two_list()
-#     print(new_puzzle.possible_match_numeric_values_for_zero_values())
-#     new_puzzle.compare_ss()
-#     new_puzzle.update_ss()
-#     new_puzzle.update_missing_value()
 
+print("\n")
+new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
+
+new_puzzle.find_associate_r_c_ss_number_as_index_of_value_zero()
+new_puzzle.zip_to_create_dict_of_two_list()
+print(new_puzzle.possible_match_numeric_values_for_zero_values())
+new_puzzle.compare_ss()
+new_puzzle.update_ss()
+new_puzzle.update_missing_value()
 print("\n")
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()

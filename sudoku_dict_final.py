@@ -261,8 +261,10 @@ for x in range(11):
     # del_key_filled_values(dict_possible_value, sudoku_puzzle)
     update_ss(sudoku_puzzle)
     update_missing_value(sudoku_puzzle)
-
+paste_sudoku_puzzle_in_matrix(sudoku_puzzle)
+print(sudoku_puzzle.count(0))
 find_indentical_three_index_in_row_with_value_zero(sudoku_puzzle)
+
 paste_sudoku_puzzle_in_matrix(sudoku_puzzle)
 print(sudoku_puzzle.count(0))
 
