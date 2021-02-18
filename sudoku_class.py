@@ -147,7 +147,7 @@ class solve_sudoku:
                         self.list_for_index_of_three_identical_zeros_in_row.append(index)
                         self.list_for_index_of_three_identical_zeros_in_row.append(index2)
                         self.list_for_index_of_three_identical_zeros_in_row.append(index3)
-            # return self.list_for_index_of_three_identical_zeros_in_row
+                return self.list_for_index_of_three_identical_zeros_in_row
             else:
                 break
 
