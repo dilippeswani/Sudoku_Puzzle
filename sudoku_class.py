@@ -1,5 +1,4 @@
 class solve_sudoku:
-
     max_count_of_value_in_common_ss = 4
     occurrence_of_value_in_list_of_possible_value = 1
 
@@ -59,7 +58,11 @@ class solve_sudoku:
                 print(values, end="\n")
             else:
                 print(values, end=" ")
-        print(self.sudoku_puzzle.count(0))
+        # print(self.sudoku_puzzle.count(0))
+
+    def count_of_zeros(self, puzzle):
+        self.sudoku_puzzle.count(0)
+        return self.sudoku_puzzle.count(0)
 
     def find_index_for_value_zero_in_sudoku_puzzle(self):
         for index, value in enumerate(self.sudoku_puzzle):
@@ -190,6 +193,7 @@ sudoku = [0, 8, 0, 0, 1, 3, 0, 6, 0,
 
 new_puzzle = solve_sudoku(sudoku)
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
+new_puzzle.count_of_zeros(sudoku)
 new_puzzle.find_index_for_value_zero_in_sudoku_puzzle()
 
 for value in range(12):
@@ -200,9 +204,10 @@ for value in range(12):
     print(new_puzzle.list_common_ss_value_as_per_index())
     new_puzzle.compare_common_ss_as_per_index_value()
     print(new_puzzle.list_of_possible_value_for_one_small_square())
-    # print(new_puzzle.list_of_identical_three_index_in_row_with_value_zero())
-    # new_puzzle.find_value_by_comparing_possible_value_in_one_ss()
-    # new_puzzle.find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero()
-
-print("\n")
+#     # print(new_puzzle.list_of_identical_three_index_in_row_with_value_zero())
+#     # new_puzzle.find_value_by_comparing_possible_value_in_one_ss()
+#     # new_puzzle.find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero()
+#
+# # print("\n")
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
+print(new_puzzle.count_of_zeros(sudoku))
