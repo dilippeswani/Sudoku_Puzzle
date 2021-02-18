@@ -154,8 +154,7 @@ class solve_sudoku:
     def find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero(self):
         dictionary_for_three_identical_zeros_in_row = {key: value for key, value in
                                                        self.possible_values_can_be_filled_for_zero_values.items()
-                                                       if
-                                                       key in self.list_for_index_of_three_identical_zeros_in_row}
+                                                       if key in self.list_for_index_of_three_identical_zeros_in_row}
         possible_value_for_index_of_three_identical_zeros_in_row = list(
             dictionary_for_three_identical_zeros_in_row.values())
         list_possible_value_for_index_of_three_identical_zeros_in_row = [value for nested_list_value in
