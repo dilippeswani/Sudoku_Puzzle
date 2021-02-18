@@ -1,4 +1,5 @@
 class solve_sudoku:
+
     max_count_of_value_in_common_ss = 4
     occurrence_of_value_in_list_of_possible_value = 1
 
@@ -103,6 +104,7 @@ class solve_sudoku:
                 self.c_small_squares.get(list_of_c_ss_keys[1])))
             self.common_list_c_ss_value = [self.sudoku_puzzle[value] for value in common_list_c_ss_index if
                                            self.sudoku_puzzle[value] != 0]
+        return self.common_list_c_ss_value
 
     def compare_common_ss_as_per_index_value(self):
         for key, value in self.possible_values_can_be_filled_for_zero_values.items():
@@ -196,10 +198,10 @@ for value in range(12):
     new_puzzle.zip_to_create_dict_of_two_list()
     print(new_puzzle.possible_match_numeric_values_for_zero_values())
     new_puzzle.update_missing_value()
-    new_puzzle.list_common_ss_value_as_per_index()
+    print(new_puzzle.list_common_ss_value_as_per_index())
     new_puzzle.compare_common_ss_as_per_index_value()
     print(new_puzzle.list_of_possible_value_for_one_small_square())
-    print(new_puzzle.list_of_identical_three_index_in_row_with_value_zero())
+    # print(new_puzzle.list_of_identical_three_index_in_row_with_value_zero())
     # new_puzzle.find_value_by_comparing_possible_value_in_one_ss()
     # new_puzzle.find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero()
 
