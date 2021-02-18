@@ -1,4 +1,6 @@
 class solve_sudoku:
+    max_count_of_value_in_common_ss = 4
+    occurrence_of_value_in_list_of_possible_value = 1
 
     def __init__(self, puzzle):
 
@@ -45,6 +47,10 @@ class solve_sudoku:
         self.list_of_matching_row_col_ss_number_as_index_of_value_zero = []
         self.dict_of_index_value_zero_and_matching_row_col_ss_number = dict()
         self.possible_values_can_be_filled_for_zero_values = dict()
+        self.common_list_c_ss_value = []
+        self.list_of_possible_value_for_one_ss = []
+        self.dictionary_for_one_ss = dict()
+        self.list_for_index_of_three_identical_zeros_in_row = []
 
     def paste_sudoku_puzzle_in_form_of_matrix(self):
         for index, values in enumerate(self.sudoku_puzzle, start=1):
@@ -88,105 +94,90 @@ class solve_sudoku:
             final_set = (row_set | column_set | ss_set)
             value_set = self.universal_set - final_set
             self.possible_values_can_be_filled_for_zero_values[key] = value_set
+        return self.possible_values_can_be_filled_for_zero_values
 
-    def compare_ss(self):
-        for index, value in enumerate(self.sudoku_puzzle):
-            if value == 0:
-                list_of_c_ss_keys = []
-                for keys, values in self.c_small_squares.items():
-                    if index in values:
-                        list_of_c_ss_keys.append(keys)
-                common_list_c_ss_index = (
-                        (self.c_small_squares.get(list_of_c_ss_keys[0])) + (
-                    self.c_small_squares.get(list_of_c_ss_keys[1])))
-                common_list_c_ss_value = []
-                for val in common_list_c_ss_index:
-                    if self.sudoku_puzzle[val] != 0:
-                        common_list_c_ss_value.append(self.sudoku_puzzle[val])
-                        for key_s, value_s in self.possible_values_can_be_filled_for_zero_values.items():
-                            if key_s == index:
-                                possible_value_for_index = self.possible_values_can_be_filled_for_zero_values.get(key_s)
-                                for valu in possible_value_for_index:
-                                    repetition_count_of_value = common_list_c_ss_value.count(valu)
-                                    if repetition_count_of_value == 4:
-                                        self.sudoku_puzzle.pop(index)
-                                        self.sudoku_puzzle.insert(index, valu)
+    def list_common_ss_value_as_per_index(self):
+        for index in self.list_index_value_zero_in_sudoku_puzzle:
+            list_of_c_ss_keys = [keys for keys, values in self.c_small_squares.items() if index in values]
+            common_list_c_ss_index = ((self.c_small_squares.get(list_of_c_ss_keys[0])) + (
+                self.c_small_squares.get(list_of_c_ss_keys[1])))
+            self.common_list_c_ss_value = [self.sudoku_puzzle[value] for value in common_list_c_ss_index if
+                                           self.sudoku_puzzle[value] != 0]
 
-    def update_ss(self):
-        for index, value in enumerate(self.sudoku_puzzle):
-            if value == 0:
-                for keys, values in self.small_squares.items():
-                    if index in values:
-                        my_dict = dict()
-                        for y in values:
-                            for key_s, value_s in self.possible_values_can_be_filled_for_zero_values.items():
-                                if key_s == y:
-                                    my_dict[y] = value_s
-                        possible_value_for_index = []
-                        for k, v in my_dict.items():
-                            possible_value_for_index.append(list(my_dict.get(k)))
-                        res = []
-                        for nested_list in possible_value_for_index:
-                            for z in nested_list:
-                                res.append(z)
-                        for valu in res:
-                            repetition_count_of_value = res.count(valu)
-                            if repetition_count_of_value == 1:
-                                for keyy, valuee in my_dict.items():
-                                    if valu in valuee:
-                                        self.sudoku_puzzle.pop(keyy)
-                                        self.sudoku_puzzle.insert(keyy, valu)
+    def compare_common_ss_as_per_index_value(self):
+        for key, value in self.possible_values_can_be_filled_for_zero_values.items():
+            possible_value_for_index = self.possible_values_can_be_filled_for_zero_values.get(key)
+            for values in possible_value_for_index:
+                repetition_count_of_value = self.common_list_c_ss_value.count(values)
+                if repetition_count_of_value == self.max_count_of_value_in_common_ss:
+                    self.sudoku_puzzle.pop(key)
+                    self.sudoku_puzzle.insert(key, values)
 
-    def find_identical_three_index_in_row_with_value_zero(self):
-        # for index in range(0,80):
-        for index, value in enumerate(self.sudoku_puzzle):
-            values = []
-            if value == 0 or value != 0:
-                if index <= 78:
-                    index2 = index + 1
-                    if self.sudoku_puzzle[index2] == 0:
-                        index3 = index2 + 1
-                        if self.sudoku_puzzle[index3] == 0:
-                            values.append(index)
-                            values.append(index2)
-                            values.append(index3)
-                            print(values)
-                            my_dict = dict()
-                            for y in values:
-                                for key_s, value_s in self.possible_values_can_be_filled_for_zero_values.items():
-                                    if key_s == y:
-                                        my_dict[y] = value_s
-                            possible_value_for_index = []
-                            for k, v in my_dict.items():
-                                possible_value_for_index.append(list(my_dict.get(k)))
-                            res = []
-                            for nested_list in possible_value_for_index:
-                                for z in nested_list:
-                                    res.append(z)
-                            for valu in res:
-                                repetition_count_of_value = res.count(valu)
-                                if repetition_count_of_value == 1:
-                                    for keyy, valuee in my_dict.items():
-                                        if valu in valuee:
-                                            self.sudoku_puzzle.pop(keyy)
-                                            self.sudoku_puzzle.insert(keyy, valu)
-                else:
-                    break
+    def list_of_possible_value_for_one_small_square(self):
+        for index in self.list_index_value_zero_in_sudoku_puzzle:
+            for keys, values in self.small_squares.items():
+                if index in values:
+                    self.dictionary_for_one_ss = {key: value for key, value in
+                                                  self.possible_values_can_be_filled_for_zero_values.items()
+                                                  if key in values}
+                    possible_value_for_index = list(self.dictionary_for_one_ss.values())
+                    self.list_of_possible_value_for_one_ss = [z for nested_list in possible_value_for_index for z in
+                                                              nested_list]
+        return self.list_of_possible_value_for_one_ss
+
+    def find_value_by_comparing_possible_value_in_one_ss(self):
+        for values in self.list_of_possible_value_for_one_ss:
+            repetition_count_of_value = self.list_of_possible_value_for_one_ss.count(values)
+            if repetition_count_of_value == self.occurrence_of_value_in_list_of_possible_value:
+                for key, value in self.dictionary_for_one_ss.items():
+                    if values in value:
+                        self.sudoku_puzzle.pop(key)
+                        self.sudoku_puzzle.insert(key, values)
+
+    def list_of_identical_three_index_in_row_with_value_zero(self):
+        for index in self.list_index_value_zero_in_sudoku_puzzle:
+            self.list_for_index_of_three_identical_zeros_in_row = []
+            if index <= 78:
+                index2 = index + 1
+                if self.sudoku_puzzle[index2] == 0:
+                    index3 = index2 + 1
+                    if self.sudoku_puzzle[index3] == 0:
+                        self.list_for_index_of_three_identical_zeros_in_row.append(index)
+                        self.list_for_index_of_three_identical_zeros_in_row.append(index2)
+                        self.list_for_index_of_three_identical_zeros_in_row.append(index3)
+            # return self.list_for_index_of_three_identical_zeros_in_row
+            else:
+                break
+
+    def find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero(self):
+        dictionary_for_three_identical_zeros_in_row = {key: value for key, value in
+                                                       self.possible_values_can_be_filled_for_zero_values.items()
+                                                       if
+                                                       key in self.list_for_index_of_three_identical_zeros_in_row}
+        possible_value_for_index_of_three_identical_zeros_in_row = list(
+            dictionary_for_three_identical_zeros_in_row.values())
+        list_possible_value_for_index_of_three_identical_zeros_in_row = [value for nested_list_value in
+                                                                         possible_value_for_index_of_three_identical_zeros_in_row
+                                                                         for value in nested_list_value]
+        for value in list_possible_value_for_index_of_three_identical_zeros_in_row:
+            repetition_count_of_value = list_possible_value_for_index_of_three_identical_zeros_in_row.count(value)
+            if repetition_count_of_value == self.occurrence_of_value_in_list_of_possible_value:
+                for keys, values in dictionary_for_three_identical_zeros_in_row.items():
+                    if value in values:
+                        self.sudoku_puzzle.pop(keys)
+                        self.sudoku_puzzle.insert(keys, value)
 
     def update_missing_value(self):
-        for index, value in enumerate(self.sudoku_puzzle):
-            if value == 0:
-                for key, val in self.possible_values_can_be_filled_for_zero_values.items():
-                    if key == index:
-                        if len(val) == 1:
-                            self.sudoku_puzzle.pop(key)
-                            value_int = set.pop(val)
-                            self.sudoku_puzzle.insert(index, value_int)
+        for index in self.list_index_value_zero_in_sudoku_puzzle:
+            for key, val in self.possible_values_can_be_filled_for_zero_values.items():
+                if key == index:
+                    if len(val) == self.occurrence_of_value_in_list_of_possible_value:
+                        self.sudoku_puzzle.pop(key)
+                        value_int = set.pop(val)
+                        self.sudoku_puzzle.insert(index, value_int)
 
 
-
-
-sudoku = [4, 8, 9, 0, 1, 3, 0, 6, 0,
+sudoku = [0, 8, 0, 0, 1, 3, 0, 6, 0,
           0, 0, 5, 0, 9, 2, 7, 8, 4,
           0, 0, 0, 0, 0, 0, 0, 9, 0,
           8, 2, 0, 0, 0, 0, 0, 3, 0,
@@ -196,39 +187,21 @@ sudoku = [4, 8, 9, 0, 1, 3, 0, 6, 0,
           0, 6, 8, 4, 7, 0, 1, 0, 0,
           0, 9, 0, 8, 6, 0, 0, 5, 0]
 
-# sudoku = [0, 0, 0, 3, 0, 0, 0, 0, 4,
-#           0, 6, 4, 2, 0, 0, 0, 0, 0,
-#           3, 0, 8, 5, 0, 0, 2, 6, 0,
-#           2, 0, 0, 0, 0, 0, 1, 0, 0,
-#           0, 0, 0, 4, 6, 7, 0, 0, 0,
-#           0, 0, 7, 0, 0, 0, 0, 0, 5,
-#           0, 9, 2, 0, 0, 8, 7, 0, 3,
-#           0, 0, 0, 0, 0, 5, 8, 2, 0,
-#           5, 0, 0, 0, 0, 9, 0, 0, 0]
-
 new_puzzle = solve_sudoku(sudoku)
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
 new_puzzle.find_index_for_value_zero_in_sudoku_puzzle()
 
-for value in range (12):
+for value in range(12):
     new_puzzle.find_associate_r_c_ss_number_as_index_of_value_zero()
     new_puzzle.zip_to_create_dict_of_two_list()
     print(new_puzzle.possible_match_numeric_values_for_zero_values())
-    new_puzzle.compare_ss()
-    new_puzzle.update_ss()
     new_puzzle.update_missing_value()
+    new_puzzle.list_common_ss_value_as_per_index()
+    new_puzzle.compare_common_ss_as_per_index_value()
+    print(new_puzzle.list_of_possible_value_for_one_small_square())
+    print(new_puzzle.list_of_identical_three_index_in_row_with_value_zero())
+    # new_puzzle.find_value_by_comparing_possible_value_in_one_ss()
+    # new_puzzle.find_value_by_comparing_possible_value_of_three_index_in_row_with_value_zero()
 
-
-# new_puzzle.find_identical_three_index_in_row_with_value_zero()
-
-print("\n")
-new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()
-
-new_puzzle.find_associate_r_c_ss_number_as_index_of_value_zero()
-new_puzzle.zip_to_create_dict_of_two_list()
-print(new_puzzle.possible_match_numeric_values_for_zero_values())
-new_puzzle.compare_ss()
-new_puzzle.update_ss()
-new_puzzle.update_missing_value()
 print("\n")
 new_puzzle.paste_sudoku_puzzle_in_form_of_matrix()

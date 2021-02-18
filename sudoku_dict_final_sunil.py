@@ -118,18 +118,9 @@ def dict_possible_zero_values(dict_index_value_zero_r_c_ss):
         row_ind = row.get(value[0])
         column_ind = column.get(value[1])
         ss_ind = small_square.get(value[2])
-        row_lst = []
-        for x in row_ind:
-            if sudoku_puzzle[x] != 0:
-                row_lst.append(sudoku_puzzle[x])
-        column_lst = []
-        for x in column_ind:
-            if sudoku_puzzle[x] != 0:
-                column_lst.append(sudoku_puzzle[x])
-        ss_lst = []
-        for x in ss_ind:
-            if sudoku_puzzle[x] != 0:
-                ss_lst.append(sudoku_puzzle[x])
+        row_lst = [sudoku_puzzle[x] for x in row_ind if sudoku_puzzle[x] != 0]
+        column_lst = [sudoku_puzzle[x] for x in column_ind if sudoku_puzzle[x] != 0]
+        ss_lst = [sudoku_puzzle[x] for x in ss_ind if sudoku_puzzle[x] != 0]
         row_set = set(row_lst)
         column_set = set(column_lst)
         ss_set = set(ss_lst)
